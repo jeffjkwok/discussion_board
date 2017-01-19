@@ -1,0 +1,25 @@
+{
+  "name": "y",
+  "authors": [
+    "y"
+  ],
+  "description": "y",
+  "main": "y",
+  "keywords": [
+    "y"
+  ],
+  "license": "y",
+  "homepage": "y",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}

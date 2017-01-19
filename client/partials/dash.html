@@ -1,0 +1,37 @@
+<div ng-controller='sessionController'>
+	<h3>Welcome, <span ng-bind='currentUser.name'></span>!</h3>
+	<div ng-controller='topicController'>
+		<input type="text" placeholder='filter' ng-model='filter'><button>Search</button>
+		<table>
+			<tr>
+				<th>Category</th>
+				<th>Topic</th>
+				<th>User Name</th>
+				<th>Posts</th>
+			</tr>
+			<tr ng-repeat='topic in topics | filter:filter'>
+				<td ng-bind='topic.category'></td>
+				<td><a href="" ng-bind='topic.topic' ng-click='showTopic(topic)'></a></td>
+				<td> <a href="" ng-bind='topic.user' ng-click='showUser(topic)'></a></td>
+				<td ng-bind='topic._messages.length'></td>
+			</tr>
+		</table>
+		<hr>
+		<form ng-submit='postTopic()'>
+			<b>Add a new Topic</b><br>
+			Topic:<br>
+			<input type="text" ng-model="topic.topic"><br>
+			Description:<br>
+			<textarea cols='40' rows='5' ng-model='topic.description'></textarea><br>
+			Category: 
+			<select ng-model='topic.category'>
+				<option>Web Dev</option>
+				<option>Swift</option>
+				<option>MEAN</option>
+				<option>Angular</option>
+				<option>Overwatch</option>
+			</select>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</div>
