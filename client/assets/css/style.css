@@ -1,0 +1,97 @@
+#box{
+  margin: 5em auto;
+  box-shadow: .5em .5em 1em;
+  padding: 3em;
+  background-color: white;
+  max-width: 80%
+}
+
+body{
+  background-image: url('../images/shattered-island.gif');
+}
+
+#main{
+  border: 1px solid black;
+  padding: 2em;
+  height: 100%;
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+h3{
+  margin: 1em 0 ;
+}
+
+.logo{
+  max-height: 1.5em;
+  padding-bottom: .25em;
+}
+
+span.btn-primary{
+  background-color: #2e6da4;
+  color: white;
+}
+
+table{
+  margin-top: 1.5em;
+}
+
+#add{
+  border: 1px #cdcdcd solid;
+  padding: 2em;
+  box-shadow: .2em .2em 1em;
+}
+
+textarea {
+  resize: none;
+}
+
+#header h2{
+  display: inline-block;
+}
+
+#header h2 a, #header h2 a:hover{
+  color: black;
+  text-decoration: none;
+}
+
+
+
+#header .welcome{
+  display: inline-block;
+  float: right;
+  vertical-align: bottom;
+}
+
+.topic, .message{
+  /*border: 1px black solid;*/
+  padding: 1em;
+}
+
+.message{
+  /*border: 1px green solid;*/
+  /*padding: 1em;*/
+}
+
+.comment{
+  /*border: 1px red solid;*/
+  padding: .5em 1em;
+}
+
+.comment p{
+  margin-bottom: 0
+}
+
+.message-info{
+  font-size: 1.1em;
+}
+
+.input-group-btn input.btn{
+  height: 5.25em;
+}
+
+.input-group-btn input.post{
+  height: 8.125em;
+}

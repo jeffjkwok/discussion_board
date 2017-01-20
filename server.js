@@ -16,6 +16,7 @@ app.use(session({
 
 app.use(express.static(path.join(root, 'client')));
 app.use(express.static(path.join(root, 'bower_components')));
+// app.use('/assets/', express.static(root + '/client/assets/'))
 app.use(bp.json());
 
 require('./server/config/mongoose.js');

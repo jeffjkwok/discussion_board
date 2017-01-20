@@ -1,8 +1,15 @@
-<div ng-controller='sessionController'>
-	<h2>Hello!</h2>
-	<p>Please enter your name to join and share you ideas.</p>
-	<form ng-submit='login()'>
-		<input type="text" ng-model='user.name'>
-		<input type="submit" value="Enter">
-	</form>
+<div ng-controller='sessionController' class='container'>
+	<div class="container-fluid">
+		<div id="box">
+			<h2>Welcome to DiscussionBoard! <img src="../assets/images/talk.png" alt="logo.png" class='logo'></h2>
+			<p>Please enter your name to join and share you ideas.</p>
+			<form ng-submit='login()' class='form-horizontal'>
+				<div class="input-group">
+					<input type="text" ng-model='user.name' class='form-control'>
+					<span class='input-group-addon btn-primary'>Enter</span>
+				</div>
+				<!-- <input type="submit" value="Enter"> -->
+			</form>
+		</div>
+	</div>
 </div>

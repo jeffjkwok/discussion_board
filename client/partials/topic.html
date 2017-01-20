@@ -1,26 +1,45 @@
-<div ng-controller='sessionController'>
-	<p><a href="#/dashboard">Dashboard</a>  <a href="/logout">Logout</a></p>
-	<div ng-controller='topicController'>
-		<h3><a href="" ng-bind='display.user' ng-click='showUser(display)'></a> posted a topic:</h3>
-		<h4>{{display.topic}}</h4>
-		<p>{{display.description}}<p>
-		<form ng-submit='postMessage(display._id , message)'>
-			Post your answer here...<br>
-			<textarea rows='5' cols='50' ng-model='message.message'></textarea>
-			<input type="submit" value='Post'>
-		</form>
-		<hr>
-		<div id='message' ng-repeat='message in display._messages'>
-			<p>{{message.upvote}} <button ng-click='upvote(message._id, message.upvote)'>+</button> {{message.downvote}} <button ng-click='downvote(message._id, message.downvote)'>-</button>&nbsp&nbsp&nbsp<b><a href='' ng-click='showUser(message)' ng-bind='message.user'></a></b> posted: </p>
-			<p>{{message.message}}</p>
-			<div id='comment' ng-repeat='comment in message._comments'>
-				<p><b><a href='' ng-click='showUser(comment)'ng-bind='comment.user'></a></b> posted: </p>
-				<p>{{comment.comment}}</p>
+<div ng-controller='sessionController' class='container'>
+	<div class="container-fluid">
+		<div ng-controller='topicController' id='main'>
+			<div id="header">
+				<h2><a href="#/dashboard">DiscussionBoard! <img src="../assets/images/talk.png" alt="logo.png" class='logo'></a></h2>
+				<h5 class='welcome'>Welcome, <span ng-bind='currentUser.name'></span>! <a href="/logout">Logout</a></h5>
+				<hr>
 			</div>
-			<form ng-submit = 'postComment(message._id, comment)'>
-				<textarea rows='3' cols='35' ng-model='comment.comment'></textarea>
-				<input type="submit" value="comment">
-			</form>
-		</div>
+			<!-- <p><a href="#/dashboard">Dashboard</a>  <a href="/logout">Logout</a></p> -->
+			<div class="topic">
+				<h4><a href="" ng-bind='display.user' ng-click='showUser(display)'></a> posted the topic:</h4>
+				<h3>{{display.topic}}</h3>
+				<blockquote>{{display.description}}</blockquote>
+				<form ng-submit='postMessage(display._id , message)' class='form-horizontal'>
+					Post your thoughts:
+					<div class="input-group col-xs-12">
+						<textarea rows='5' cols='50' ng-model='message.message' class='form-control'></textarea>
+						<div class="input-group-btn">
+							<input type="submit" value='Post' class='btn btn-primary post'>
+						</div>
+					</div>
+				</form>
+			</div>
+				<hr>
+				<div class='message' ng-repeat='message in display._messages'>
+					<p class='message-info'><b>{{message.upvote}} </b><button ng-click='upvote(message._id, message.upvote)' class='btn-sm btn-danger'>+</button> <b>{{message.downvote}} </b><button ng-click='downvote(message._id, message.downvote)' class='btn-sm btn-danger'>-</button>&nbsp&nbsp&nbsp<b><a href='' ng-click='showUser(message)' ng-bind='message.user'></a></b> posted: </p>
+					<h4>{{message.message}}</h5>
+					<div class='comment' ng-repeat='comment in message._comments'>
+						<p><b><a href='' ng-click='showUser(comment)'ng-bind='comment.user'></a></b> posted: </p>
+						<p>{{comment.comment}}</p>
+					</div>
+					<form ng-submit = 'postComment(message._id, comment)' class='form-horizontal'>
+						Add a Comment:
+						<div class="input-group col-xs-12">
+							<textarea rows='3' cols='35' ng-model='comment.comment' class='form-control'></textarea>
+							<div class="input-group-btn">
+								<input type="submit" value="comment" class='btn btn-primary'>
+							</div>
+						</div>
+					</form>
+					<hr>
+				</div>
+			</div>
 	</div>
 </div>
